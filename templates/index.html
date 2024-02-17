@@ -3,13 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Image Generator Ai</title>
+    <title>Document</title>
 </head>
 <body>
-    <form id="textForm" action="/submit_text" method="POST">
-        <label for="textInput">Describe your image:</label>
-        <br><textarea id="textInput" name="text" rows="4" cols="50"></textarea><br>
-        <button type="submit">Generate</button>
-    </form>
+    <p>Hello!</p>
+    <p>Welcome to my page!</p>
+    <p>Here yo can find some simple Ai applications! Enjoy!</p>
+    <p>Available apps:</p>
+    <p>1.<a href="{{ url_for('text2image') }}">Text to Image generator</a></p>
+    <br><br>
+    <p>You can check out the <a href="https://github.com/hmralavi/WebAppAi">source code</a> at my github.</p>
 </body>
 </html>

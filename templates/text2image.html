@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Image Generator Ai</title>
+</head>
+<body>
+    <p><a href="{{ url_for('homepage') }}">Home Page</a></p>
+    <p>Text2Image generator using the pretrained <a href="https://huggingface.co/runwayml/stable-diffusion-v1-5">Stable Diffusion v1-5 Model Card</a> model.</p>
+    <form action="{{ url_for('text2image') }}" method="POST">
+        <label for="usertext">Describe the image you want:</label>
+        <br><textarea id="usertext" name="usertext" rows="4" cols="50">{{input_prompt}}</textarea>
+        <p><button type="submit" name="gen_txt_btn">Generate random text</button></p>
+        <p><button type="submit" name="gen_img_btn">Generate image</button></p>
+    </form>
+    <br>
+    <form>
+        <p><b><u>Result:</u></b></p>
+        <p><label for="outtext"><u>Input text:</u></label></p>
+        <p><label id="outtext">&nbsp;{{output_prompt}}</label></p>
+        <p><label for="outimg"><u>Generated image:</u></label></p>
+        <p><img id="outimg" src="{{output_img}}"></p>
+    </form>
+</body>
+</html>
