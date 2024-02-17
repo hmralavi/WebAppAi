@@ -1,0 +1,4 @@
+.env
+.vscode
+static/gen_imgs
+test.py
