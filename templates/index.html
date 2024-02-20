@@ -1,17 +1,52 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AiTools</title>
+<link rel="icon" type="image/x-icon" href="../static/assets/icon2.ico">
+<link href="../static/css/bootstrap-4.4.1.css" rel="stylesheet" type="text/css">
+<link href="../static/css/styles.css" rel="stylesheet" type="text/css">
 </head>
+
 <body>
-    <p>Hello!</p>
-    <p>Welcome to my page!</p>
-    <p>Here yo can find some simple Ai applications! Enjoy!</p>
-    <p>Available apps:</p>
-    <p>1.<a href="{{ url_for('text2image') }}">Text to Image generator</a></p>
-    <br><br>
-    <p>You can check out the <a href="https://github.com/hmralavi/WebAppAi">source code</a> at my github.</p>
+<nav class="navbar navbar-expand-lg navbar-light bg-light page-width"><a class="navbar-brand" href="index.html"><img class="main-logo" src="../static/assets/logo.png"></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent1" aria-controls="navbarSupportedContent1" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent1">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active"> <a class="nav-link" href="index.html">Home</a> </li>
+      <li class="nav-item dropdown active"> <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Apps </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown1"> <a class="dropdown-item" href="text2image.html">Text2Image Generator</a> <a class="dropdown-item" href="textsum.html">Text Summarization</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="skinlesion.html">Skin Lesion Classification</a> </div>
+      </li>
+    </ul>
+    <ul class="navbar-nav">
+      <li class="nav-item active"> <a class="nav-link" href="https://github.com/hmralavi/WebAppAi" target="new">GitHub</a> </li>
+    </ul>
+    <!--
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+--> 
+  </div>
+</nav>
+<div class="container-fluid page-width"> <br>
+  <h2>Welcome!</h2>
+  <p>This is a demo open-source web application created with python and flask.</p>
+  <p>You can find some simple Ai tools and applications here.</p>
+  <p>Here is the list of the available apps:</p>
+  <ul>
+    <li> <a href="text2image.html" > Text2Image Generator </a></li>
+    <li> <a href="textsum.html" > Text Summarization </a></li>
+    <li> <a href="skinlesion.html" > Skin Lesion Classification </a></li>
+  </ul>
+  <p>Feel free to <a href="mailto:hmralavi@gmail.com">contact</a> me for any questions. Enjoy!</p>
+</div>
+<script src="../static/js/jquery-3.4.1.min.js"></script> 
+<script src="../static/js/popper.min.js"></script> 
+<script src="../static/js/bootstrap-4.4.1.js"></script>
 </body>
 </html>

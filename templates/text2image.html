@@ -1,26 +1,57 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Image Generator Ai</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AiTools</title>
+<link rel="icon" type="image/x-icon" href="../static/assets/icon2.ico">
+<link href="../static/css/bootstrap-4.4.1.css" rel="stylesheet" type="text/css">
+<link href="../static/css/styles.css" rel="stylesheet" type="text/css">
 </head>
+
 <body>
-    <p><a href="{{ url_for('homepage') }}">Home Page</a></p>
-    <p>Text2Image generator using the pretrained <a href="https://huggingface.co/runwayml/stable-diffusion-v1-5">Stable Diffusion v1-5 Model Card</a> model.</p>
-    <form action="{{ url_for('text2image') }}" method="POST">
-        <label for="usertext">Describe the image you want:</label>
-        <br><textarea id="usertext" name="usertext" rows="4" cols="50">{{input_prompt}}</textarea>
-        <p><button type="submit" name="gen_txt_btn">Generate random text</button></p>
-        <p><button type="submit" name="gen_img_btn">Generate image</button></p>
+<nav class="navbar navbar-expand-lg navbar-light bg-light page-width"><a class="navbar-brand" href="index.html"><img class="main-logo" src="../static/assets/logo.png"></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent1" aria-controls="navbarSupportedContent1" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent1">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active"> <a class="nav-link" href="index.html">Home</a> </li>
+      <li class="nav-item dropdown active"> <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Apps </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown1"> <a class="dropdown-item" href="text2image.html">Text2Image Generator</a> <a class="dropdown-item" href="textsum.html">Text Summarization</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="skinlesion.html">Skin Lesion Classification</a> </div>
+      </li>
+    </ul>
+    <ul class="navbar-nav">
+      <li class="nav-item active"> <a class="nav-link" href="https://github.com/hmralavi/WebAppAi" target="new">GitHub</a> </li>
+    </ul>
+    <!--
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
     </form>
-    <br>
-    <form>
-        <p><b><u>Result:</u></b></p>
-        <p><label for="outtext"><u>Input text:</u></label></p>
-        <p><label id="outtext">&nbsp;{{output_prompt}}</label></p>
-        <p><label for="outimg"><u>Generated image:</u></label></p>
-        <p><img id="outimg" src="{{output_img}}"></p>
-    </form>
+--> 
+  </div>
+</nav>
+<div class="container-fluid page-width"> <br>
+  <h2>Text2Image Generator</h2>
+  <p>Text2Image generator using <a href="https://huggingface.co/stabilityai/stable-diffusion-xl-base-1.0" target="new">this</a> pretrained model from the HuggingFace.</p>
+  <form action="{{ url_for('text2image') }}" method="POST">
+    <div class="form-group">
+      <label for="usertext">Describe the image you want:</label>
+      <div class="input-group mb-3 col-xl-7">
+        <input type="text" class="form-control" id="usertext" name="usertext" placeholder="Type or click random" aria-label="" value="{{input_prompt}}">
+        <div class="input-group-append">
+          <button class="btn btn-outline-secondary" type="submit" name="gen_txt_btn">Random!</button>
+        </div>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary" name="gen_img_btn">Generate</button>
+  </form>
+  <p class='err-msg'>{{err_msg}}</p>
+</div>
+<script src="../static/js/jquery-3.4.1.min.js"></script> 
+<script src="../static/js/popper.min.js"></script> 
+<script src="../static/js/bootstrap-4.4.1.js"></script>
 </body>
 </html>

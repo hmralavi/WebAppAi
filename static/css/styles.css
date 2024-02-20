@@ -1,0 +1,14 @@
+@charset "utf-8";
+.main-logo {
+  display: inherit;
+  max-height: 70px;
+}
+.page-width {
+  padding-left: 20%;
+  padding-right: 20%;
+}
+.err-msg {
+  color: #FF0004;
+  font-style: italic;
+  font-size: small;
+}
