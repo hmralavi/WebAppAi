@@ -34,24 +34,56 @@
   </div>
 </nav>
 <div class="container-fluid page-width"> <br>
-  <h2>Text2Image Generator</h2>
-  <p>Text2Image generator using <a href="https://huggingface.co/stabilityai/stable-diffusion-xl-base-1.0" target="new">this</a> pretrained model from the HuggingFace.</p>
-  <form action="{{ url_for('text2image') }}" method="POST">
+  <h2>Text Summarization</h2>
+  <p>Text summarization using <a href="https://huggingface.co/facebook/bart-large-cnn" target="new">this</a> pretrained model from the HuggingFace.</p>
+  <form action="{{ url_for('textsum') }}" method="POST" enctype="multipart/form-data">
     <div class="form-group">
-      <label for="usertext">Describe the image you want:</label>
-      <div class="input-group mb-3 col-xl-7">
-        <input type="text" class="form-control" id="usertext" name="usertext" placeholder="Type or click random" aria-label="" value="{{input_text}}">
-        <div class="input-group-append">
-          <button class="btn btn-outline-secondary" type="submit" name="gen_txt_btn">Random!</button>
-        </div>
+      <label for="usertext"><span style="font-size: 24px;">&bull;</span> Write your text here:</label>
+      <div class="input-group mb-3 col-xl-10">
+        <textarea class="form-control" id="usertext" name="usertext" rows="5">{{input_text}}</textarea>
       </div>
+      <label for="userfile"><span style="font-size: 24px;">&bull;</span> OR import your document:</label>
+      <div class="input-group">
+        <input class="btn btn-outline-secondary" type="file" id="userfile" name="userfile" accept=".pdf,.txt,.docx">
+      </div>
+	  <br>
+	  <label for="options"><span style="font-size: 24px;">&bull;</span> Summary options:</label>
+      <div class="col-xl-10" id="options">
+        <label for="slider1">Min Length (Words)</label>
+        <input type="range" id="slider1" name="min_length" min="1" max="1000" value="{{min_length}}">
+        <span id="sliderValue1">30</span> <br>
+        <label for="slider2">Max Length (Words)</label>
+        <input type="range" id="slider2" name="max_length" min="10" max="10000" value="{{max_length}}">
+        <span id="sliderValue2">130</span> </div>
     </div>
-    <button type="submit" class="btn btn-primary" name="gen_img_btn">Generate</button>
+    <button type="submit" class="btn btn-primary" name="sum_txt_btn">Summarize</button>
   </form>
   <p class="err-msg">{{err_msg}}</p>
+  <div class="col-xl-10 sum-txt-container hide-sum {{show_sum}}">
+	<span class="badge badge-success sum-txt-heading">Summary:</span>
+    <p class="sum-txt">{{sum_txt}}</p>
+  </div>
 </div>
 <script src="../static/js/jquery-3.4.1.min.js"></script> 
 <script src="../static/js/popper.min.js"></script> 
-<script src="../static/js/bootstrap-4.4.1.js"></script>
+<script src="../static/js/bootstrap-4.4.1.js"></script> 
+<script>
+	// JavaScript to display the slider values
+	const slider1 = document.getElementById("slider1");
+	const output1 = document.getElementById("sliderValue1");
+	output1.textContent = slider1.value; // Display the default slider value
+
+	slider1.oninput = function() {
+		output1.textContent = this.value;
+	}
+
+	const slider2 = document.getElementById("slider2");
+	const output2 = document.getElementById("sliderValue2");
+	output2.textContent = slider2.value; // Display the default slider value
+
+	slider2.oninput = function() {
+		output2.textContent = this.value;
+	}
+</script> 
 </body>
 </html>
