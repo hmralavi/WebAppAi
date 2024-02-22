@@ -50,11 +50,11 @@
 	  <label for="options"><span style="font-size: 24px;">&bull;</span> Summary options:</label>
       <div class="col-xl-10" id="options">
         <label for="slider1">Min Length (Words)</label>
-        <input type="range" id="slider1" name="min_length" min="1" max="1000" value="{{min_length}}">
-        <span id="sliderValue1">30</span> <br>
+        <input type="range" id="slider1" name="min_length" min="1" max="1000" value="{{min_length}}" oninput="slider1change()">
+        <span id="sliderValue1">{{min_length}}</span> <br>
         <label for="slider2">Max Length (Words)</label>
-        <input type="range" id="slider2" name="max_length" min="10" max="10000" value="{{max_length}}">
-        <span id="sliderValue2">130</span> </div>
+        <input type="range" id="slider2" name="max_length" min="10" max="10000" value="{{max_length}}" oninput="slider2change()">
+        <span id="sliderValue2">{{max_length}}</span> </div>
     </div>
     <button type="submit" class="btn btn-primary">Summarize</button>
   </form>
@@ -69,20 +69,11 @@
 <script src="../static/js/bootstrap-4.4.1.js"></script> 
 <script>
 	// JavaScript to display the slider values
-	const slider1 = document.getElementById("slider1");
-	const output1 = document.getElementById("sliderValue1");
-	output1.textContent = slider1.value; // Display the default slider value
-
-	slider1.oninput = function() {
-		output1.textContent = this.value;
+	function slider1change() {
+		document.getElementById("sliderValue1").textContent = document.getElementById("slider1").value;
 	}
-
-	const slider2 = document.getElementById("slider2");
-	const output2 = document.getElementById("sliderValue2");
-	output2.textContent = slider2.value; // Display the default slider value
-
-	slider2.oninput = function() {
-		output2.textContent = this.value;
+	function slider2change() {
+		document.getElementById("sliderValue2").textContent = document.getElementById("slider2").value;
 	}
 </script> 
 </body>
