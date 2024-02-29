@@ -38,7 +38,7 @@
   <p>Text2Image generator using <a href="https://huggingface.co/stabilityai/stable-diffusion-xl-base-1.0" target="new">this</a> pretrained model from the HuggingFace.</p>
   <form action="{{ url_for('text2image') }}" method="POST">
     <div class="form-group">
-      <label for="usertext">Describe the image you want:</label>
+      <label for="usertext"><b>Describe the image you want:</b></label>
       <div class="input-group mb-3 col-xl-7">
         <input type="text" class="form-control" id="usertext" name="usertext" placeholder="Type or click random" value="{{input_text}}">
         <div class="input-group-append">

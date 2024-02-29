@@ -38,16 +38,17 @@
   <p>Text summarization using <a href="https://huggingface.co/facebook/bart-large-cnn" target="new">this</a> pretrained model from the HuggingFace.</p>
   <form action="{{ url_for('textsum') }}" method="POST" enctype="multipart/form-data">
     <div class="form-group">
-      <label for="usertext"><span style="font-size: 24px;">&bull;</span> Write your text here:</label>
-      <div class="input-group mb-3 col-xl-10">
-        <textarea class="form-control" id="usertext" name="usertext" rows="5">{{input_text}}</textarea>
-      </div>
-      <label for="userfile"><span style="font-size: 24px;">&bull;</span> OR import your document:</label>
+      <label for="userfile"><b>&bull; Import your document:</b></label>
       <div class="input-group">
         <input class="btn btn-outline-secondary" type="file" id="userfile" name="userfile" accept=".pdf,.txt,.docx">
       </div>
-	  <br>
-	  <label for="options"><span style="font-size: 24px;">&bull;</span> Summary options:</label>
+      <br>
+      <label for="usertext"><b>&bull; Or write your text here:</b></label>
+      <div class="input-group mb-3 col-xl-10">
+        <textarea class="form-control" id="usertext" name="usertext" rows="5">{{input_text}}</textarea>
+      </div>
+      <br>
+      <label for="options"><b>&bull; Summary options:</b></label>
       <div class="col-xl-10" id="options">
         <label for="slider1">Min Length (Words)</label>
         <input type="range" id="slider1" name="min_length" min="1" max="1000" value="{{min_length}}" oninput="slider1change()">
@@ -56,17 +57,17 @@
         <input type="range" id="slider2" name="max_length" min="10" max="10000" value="{{max_length}}" oninput="slider2change()">
         <span id="sliderValue2">{{max_length}}</span> </div>
     </div>
+    <br>
     <button type="submit" class="btn btn-primary">Summarize</button>
   </form>
   <p class="err-msg">{{err_msg}}</p>
-  <div class="col-xl-10 sum-txt-container hide-sum {{show_sum}}">
-	<span class="badge badge-success sum-txt-heading">Summary:</span>
+  <div class="col-xl-10 sum-txt-container hide-sum {{show_sum}}"> <span class="badge badge-success sum-txt-heading">Summary:</span>
     <p class="sum-txt">{{sum_txt}}</p>
   </div>
 </div>
 <script src="../static/js/jquery-3.4.1.min.js"></script> 
 <script src="../static/js/popper.min.js"></script> 
-<script src="../static/js/bootstrap-4.4.1.js"></script> 
+<script src="../static/js/bootstrap-4.4.1.js"></script>
 <script>
 	// JavaScript to display the slider values
 	function slider1change() {
@@ -75,6 +76,6 @@
 	function slider2change() {
 		document.getElementById("sliderValue2").textContent = document.getElementById("slider2").value;
 	}
-</script> 
+</script>
 </body>
 </html>
