@@ -5,7 +5,6 @@ from dotenv import load_dotenv
 import os
 import io
 from PIL import Image
-import random
 from werkzeug.utils import secure_filename
 from pypdf import PdfReader
 from docx import Document
