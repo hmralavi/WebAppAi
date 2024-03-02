@@ -61,13 +61,13 @@
     <button type="submit" class="btn btn-primary">Summarize</button>
   </form>
   <p class="err-msg">{{err_msg}}</p>
-  <div class="col-xl-10 sum-txt-container hide-sum {{show_sum}}"> <span class="badge badge-success sum-txt-heading">Summary:</span>
+  <div class="col-xl-10 sum-txt-container d-none {{display}}"> <span class="badge badge-success sum-txt-heading">Summary:</span>
     <p class="sum-txt">{{sum_txt}}</p>
   </div>
 </div>
 <script src="../static/js/jquery-3.4.1.min.js"></script> 
 <script src="../static/js/popper.min.js"></script> 
-<script src="../static/js/bootstrap-4.4.1.js"></script>
+<script src="../static/js/bootstrap-4.4.1.js"></script> 
 <script>
 	// JavaScript to display the slider values
 	function slider1change() {

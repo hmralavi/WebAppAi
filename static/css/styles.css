@@ -4,8 +4,8 @@
   max-height: 70px;
 }
 .page-width {
-  padding-left: 20%;
-  padding-right: 20%;
+  padding-left: 30%;
+  padding-right: 30%;
 }
 .err-msg {
   color: #FF0004;
@@ -14,14 +14,8 @@
 }
 .sum-txt-container {
     padding-top: 1.2em;
-    border-top-width: medium;
-    border-top-style: solid;
-}
-.hide-sum {
-  display: none;
-}
-.show-sum {
-  display: inline-block;
+    border-width: thin;
+    border-style: solid;
 }
 .sum-txt-heading {
   font-size: large;
@@ -40,4 +34,25 @@
   padding-right: 10px;
   padding-bottom: 10px;
   padding-left: 10px;
+}
+.carousel-image {
+  max-height: 450px;
+}
+.carousel-position {
+  max-width: 600px;
+  left: 50%;
+  transform: translate(-50%);
+}
+.carousel-caption-txt {
+  background-color: rgba(0, 0, 0, 0.30);
+  transform: translate(0, 40%);
+}
+.accordion-width {
+  max-width: 768px;
+}
+.user-lesion-image {
+  max-width: 256px;
+  max-height: 256px;
+  left: 50%;
+  transform: translate(50%);
 }
